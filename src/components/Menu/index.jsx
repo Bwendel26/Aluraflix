@@ -3,7 +3,7 @@ import Logo from "../../assets/img/logo.png"
 import "./Menu.css"
 import Button from "../Button/index"
 //components
-import ButtonLink from "./components/ButtonLink/index"
+//import ButtonLink from "./components/ButtonLink/index"
 
 function Menu() {
    return(
