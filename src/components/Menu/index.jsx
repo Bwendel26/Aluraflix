@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Logo from "../../assets/img/logo.png"
+import Logo from "../../assets/img/3b_logo.png"
 import "./Menu.css"
 import Button from "../Button/index"
 //components
