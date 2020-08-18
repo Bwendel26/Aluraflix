@@ -6,8 +6,8 @@ import Button from '../../../components/Button';
 
 export default () => {
   const valoresIniciais = {
-    nome: ' Nome da Categoria',
-    descricao: 'Descrição',
+    nome: '',
+    descricao: '',
     cor: '',
   };
   const [categorias, setCategorias] = useState([]);
@@ -80,12 +80,14 @@ export default () => {
           onChange={handleChange}
         />
 
-        <Button>Cadastrar</Button>
+        <Button>
+          Cadastrar
+        </Button>
       </form>
 
       <ul>
-        {categorias.map((categoria, indice) => (
-          <li key={`${categorias}${indice}`}>
+        {categorias.map((categoria) => (
+          <li key={`${categorias.nome}`}>
             {categoria.nome}
           </li>
         ))}
