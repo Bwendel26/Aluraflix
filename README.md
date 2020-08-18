@@ -1,3 +1,5 @@
+Vercel deploy: https://vercel.com/bwendel26/aluraflix/1o78nn1hj
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
