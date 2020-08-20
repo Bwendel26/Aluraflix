@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/pageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 export default () => {
   const valoresIniciais = {
@@ -10,23 +11,10 @@ export default () => {
     descricao: '',
     cor: '',
   };
+  const { handleChange, valores, clearForm } = useForm(valoresIniciais);
+
   const [categorias, setCategorias] = useState([]);
-  const [valores, setValores] = useState(valoresIniciais);
 
-  function setValue(chave, valor) {
-    setValores({
-      ...valores,
-      [chave]: valor, // nome: "valor"
-    });
-  }
-
-  function handleChange(infosEvento) {
-    // const { getAttribute, value } = infosEvento.target;
-    setValue(
-      infosEvento.target.getAttribute('name'),
-      infosEvento.target.value,
-    );
-  }
 
   useEffect(() => {
     const URL_BACK = window.location.hostname.includes('localhost')
@@ -55,7 +43,7 @@ export default () => {
           valores,
         ]);
 
-        setValores(valoresIniciais);
+        clearForm(valoresIniciais);
       }}
       >
         {/* State */}
@@ -107,8 +95,8 @@ export default () => {
 
       <ul>
         {categorias.map((categoria) => (
-          <li key={`${categorias.nome}`}>
-            {categoria.nome}
+          <li key={`${categorias.titulo}`}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
