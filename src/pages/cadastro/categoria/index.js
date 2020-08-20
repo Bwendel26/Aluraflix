@@ -29,7 +29,9 @@ export default () => {
   }
 
   useEffect(() => {
-    const URL_BACK = 'http://localhost:5000/categorias';
+    const URL_BACK = window.location.hostname.includes('localhost')
+    ? 'http://localhost:5000/categorias'
+    : 'https://alura-flix-bruno-fernandes.herokuapp.com/categorias';
     fetch(URL_BACK)
       .then(async (resp) => {
         const response = await resp.json();
